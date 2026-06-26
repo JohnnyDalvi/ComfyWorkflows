@@ -1,0 +1,593 @@
+{
+  "105": {
+    "inputs": {
+      "filename_prefix": [
+        "140",
+        0
+      ],
+      "images": [
+        "275",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save normal"
+    }
+  },
+  "127": {
+    "inputs": {
+      "model": [
+        "413",
+        0
+      ],
+      "clip": [
+        "413",
+        1
+      ],
+      "vae": [
+        "413",
+        2
+      ],
+      "steps": [
+        "416:1",
+        0
+      ],
+      "cfg": [
+        "416:2",
+        0
+      ],
+      "sampler": [
+        "416:3",
+        0
+      ],
+      "scheduler": [
+        "416:4",
+        0
+      ]
+    },
+    "class_type": "Context Big (rgthree)",
+    "_meta": {
+      "title": "Context Big (rgthree)"
+    }
+  },
+  "128": {
+    "inputs": {
+      "model": [
+        "414",
+        0
+      ],
+      "clip": [
+        "414",
+        1
+      ],
+      "vae": [
+        "414",
+        2
+      ],
+      "steps": [
+        "415:1",
+        0
+      ],
+      "cfg": [
+        "415:2",
+        0
+      ],
+      "sampler": [
+        "415:3",
+        0
+      ],
+      "scheduler": [
+        "415:4",
+        0
+      ]
+    },
+    "class_type": "Context Big (rgthree)",
+    "_meta": {
+      "title": "Context Big (rgthree)"
+    }
+  },
+  "139": {
+    "inputs": {
+      "ctx_01": [
+        "421",
+        0
+      ]
+    },
+    "class_type": "Context Switch Big (rgthree)",
+    "_meta": {
+      "title": "Context Switch Big (rgthree)"
+    }
+  },
+  "140": {
+    "inputs": {
+      "value": "SDXL"
+    },
+    "class_type": "PrimitiveString",
+    "_meta": {
+      "title": "Filename"
+    }
+  },
+  "160": {
+    "inputs": {
+      "PowerLoraLoaderHeaderWidget": {
+        "type": "PowerLoraLoaderHeaderWidget"
+      },
+      "lora_1": {
+        "on": false,
+        "lora": "EpicF4nta5yXL.safetensors",
+        "strength": 1
+      },
+      "➕ Add Lora": "",
+      "model": [
+        "139",
+        1
+      ],
+      "clip": [
+        "139",
+        2
+      ]
+    },
+    "class_type": "Power Lora Loader (rgthree)",
+    "_meta": {
+      "title": "Power Lora Loader (rgthree)"
+    }
+  },
+  "198": {
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "batch_size": 4
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "Empty Latent Image"
+    }
+  },
+  "200": {
+    "inputs": {
+      "text": "(A heroic girl sitting on the balcony of a skyscraper looking at the town center:1.0),( portrait photography, capturing emotion, personality, flattering lighting, professional, engaging, compelling composition:1.0)",
+      "anything": [
+        "279:397",
+        0
+      ]
+    },
+    "class_type": "easy showAnything",
+    "_meta": {
+      "title": "Positive Debug"
+    }
+  },
+  "203": {
+    "inputs": {
+      "value": 1111599172135007
+    },
+    "class_type": "PrimitiveInt",
+    "_meta": {
+      "title": "Seed"
+    }
+  },
+  "255": {
+    "inputs": {
+      "text": [
+        "279:397",
+        0
+      ],
+      "clip": [
+        "160",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "256": {
+    "inputs": {
+      "text": [
+        "277",
+        1
+      ],
+      "clip": [
+        "160",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "274": {
+    "inputs": {
+      "seed": [
+        "203",
+        0
+      ],
+      "steps": [
+        "139",
+        9
+      ],
+      "cfg": [
+        "139",
+        11
+      ],
+      "sampler_name": [
+        "139",
+        13
+      ],
+      "scheduler": [
+        "139",
+        14
+      ],
+      "denoise": 1,
+      "model": [
+        "160",
+        0
+      ],
+      "positive": [
+        "255",
+        0
+      ],
+      "negative": [
+        "256",
+        0
+      ],
+      "latent_image": [
+        "198",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "275": {
+    "inputs": {
+      "samples": [
+        "274",
+        0
+      ],
+      "vae": [
+        "139",
+        3
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "276": {
+    "inputs": {
+      "negative": "blurry, depth of field, (embedding:NEGATIVE_HANDS), (embedding:DeepNegative_xl_v1)"
+    },
+    "class_type": "easy negative",
+    "_meta": {
+      "title": "Negative"
+    }
+  },
+  "277": {
+    "inputs": {
+      "styles": "JD Styles",
+      "select_styles": "",
+      "positive": [
+        "279:394",
+        0
+      ],
+      "negative": [
+        "276",
+        0
+      ]
+    },
+    "class_type": "easy stylesSelector",
+    "_meta": {
+      "title": "Styles Selector"
+    }
+  },
+  "278": {
+    "inputs": {
+      "positive": ""
+    },
+    "class_type": "easy positive",
+    "_meta": {
+      "title": "Positive"
+    }
+  },
+  "413": {
+    "inputs": {
+      "ckpt_name": "juggernautXL_ragnarokBy.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "414": {
+    "inputs": {
+      "ckpt_name": "Juggernaut_RunDiffusionPhoto2_Lightning_4Steps.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "421": {
+    "inputs": {
+      "switch": false,
+      "on_false": [
+        "127",
+        0
+      ],
+      "on_true": [
+        "128",
+        0
+      ]
+    },
+    "class_type": "ComfySwitchNode",
+    "_meta": {
+      "title": "Switch"
+    }
+  },
+  "415:0": {
+    "inputs": {
+      "ckpt_name": "sd3.5_medium.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "415:1": {
+    "inputs": {
+      "int": 4
+    },
+    "class_type": "Int Literal",
+    "_meta": {
+      "title": "Int Literal"
+    }
+  },
+  "415:2": {
+    "inputs": {
+      "value": 1
+    },
+    "class_type": "PrimitiveFloat",
+    "_meta": {
+      "title": "Float"
+    }
+  },
+  "415:3": {
+    "inputs": {
+      "sampler_name": "euler"
+    },
+    "class_type": "Sampler Selector",
+    "_meta": {
+      "title": "Sampler Selector"
+    }
+  },
+  "415:4": {
+    "inputs": {
+      "scheduler": "simple"
+    },
+    "class_type": "Scheduler Selector",
+    "_meta": {
+      "title": "Scheduler Selector"
+    }
+  },
+  "416:0": {
+    "inputs": {
+      "ckpt_name": "sd3.5_medium.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "416:1": {
+    "inputs": {
+      "int": 30
+    },
+    "class_type": "Int Literal",
+    "_meta": {
+      "title": "Int Literal"
+    }
+  },
+  "416:2": {
+    "inputs": {
+      "value": 4
+    },
+    "class_type": "PrimitiveFloat",
+    "_meta": {
+      "title": "Float"
+    }
+  },
+  "416:3": {
+    "inputs": {
+      "sampler_name": "euler"
+    },
+    "class_type": "Sampler Selector",
+    "_meta": {
+      "title": "Sampler Selector"
+    }
+  },
+  "416:4": {
+    "inputs": {
+      "scheduler": "simple"
+    },
+    "class_type": "Scheduler Selector",
+    "_meta": {
+      "title": "Scheduler Selector"
+    }
+  },
+  "280:387": {
+    "inputs": {
+      "string_a": [
+        "280:385",
+        0
+      ],
+      "string_b": ")",
+      "delimiter": ""
+    },
+    "class_type": "StringConcatenate",
+    "_meta": {
+      "title": "Concatenate Text"
+    }
+  },
+  "280:388": {
+    "inputs": {
+      "string_a": ":",
+      "string_b": [
+        "280:387",
+        0
+      ],
+      "delimiter": ""
+    },
+    "class_type": "StringConcatenate",
+    "_meta": {
+      "title": "Concatenate Text"
+    }
+  },
+  "280:389": {
+    "inputs": {
+      "string_a": [
+        "280:384",
+        0
+      ],
+      "string_b": [
+        "280:388",
+        0
+      ],
+      "delimiter": ""
+    },
+    "class_type": "StringConcatenate",
+    "_meta": {
+      "title": "Concatenate Text"
+    }
+  },
+  "280:391": {
+    "inputs": {
+      "value": 1
+    },
+    "class_type": "easy float",
+    "_meta": {
+      "title": "Float"
+    }
+  },
+  "280:385": {
+    "inputs": {
+      "float_": [
+        "280:391",
+        0
+      ]
+    },
+    "class_type": "CR Float To String",
+    "_meta": {
+      "title": "🔧 CR Float To String"
+    }
+  },
+  "280:384": {
+    "inputs": {
+      "string_a": "(",
+      "string_b": [
+        "278",
+        0
+      ],
+      "delimiter": ""
+    },
+    "class_type": "StringConcatenate",
+    "_meta": {
+      "title": "Concatenate Text"
+    }
+  },
+  "279:397": {
+    "inputs": {
+      "string_a": [
+        "279:395",
+        0
+      ],
+      "string_b": ")",
+      "delimiter": ""
+    },
+    "class_type": "StringConcatenate",
+    "_meta": {
+      "title": "Concatenate Text"
+    }
+  },
+  "279:396": {
+    "inputs": {
+      "float_": [
+        "279:403",
+        0
+      ]
+    },
+    "class_type": "CR Float To String",
+    "_meta": {
+      "title": "🔧 CR Float To String"
+    }
+  },
+  "279:406": {
+    "inputs": {
+      "value": [
+        "280:389",
+        0
+      ]
+    },
+    "class_type": "easy string",
+    "_meta": {
+      "title": "Prompt"
+    }
+  },
+  "279:403": {
+    "inputs": {
+      "value": 1
+    },
+    "class_type": "easy float",
+    "_meta": {
+      "title": "Float"
+    }
+  },
+  "279:405": {
+    "inputs": {
+      "value": [
+        "277",
+        0
+      ]
+    },
+    "class_type": "easy string",
+    "_meta": {
+      "title": "Style"
+    }
+  },
+  "279:395": {
+    "inputs": {
+      "string_a": [
+        "279:405",
+        0
+      ],
+      "string_b": [
+        "279:396",
+        0
+      ],
+      "delimiter": ":"
+    },
+    "class_type": "StringConcatenate",
+    "_meta": {
+      "title": "Concatenate Text"
+    }
+  },
+  "279:394": {
+    "inputs": {
+      "string_a": [
+        "279:406",
+        0
+      ],
+      "string_b": ",(",
+      "delimiter": ""
+    },
+    "class_type": "StringConcatenate",
+    "_meta": {
+      "title": "Concatenate Text"
+    }
+  }
+}

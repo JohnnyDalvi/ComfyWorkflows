@@ -1,0 +1,258 @@
+{
+  "8": {
+    "inputs": {
+      "samples": [
+        "294",
+        0
+      ],
+      "vae": [
+        "308",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "135": {
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "batch_size": 1
+    },
+    "class_type": "EmptySD3LatentImage",
+    "_meta": {
+      "title": "EmptySD3LatentImage"
+    }
+  },
+  "294": {
+    "inputs": {
+      "seed": 493728013197034,
+      "steps": [
+        "333",
+        0
+      ],
+      "cfg": 1,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 1,
+      "model": [
+        "319",
+        0
+      ],
+      "positive": [
+        "318",
+        0
+      ],
+      "negative": [
+        "352",
+        0
+      ],
+      "latent_image": [
+        "135",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "308": {
+    "inputs": {
+      "vae_name": "ae.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "Load VAE"
+    }
+  },
+  "311": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  },
+  "318": {
+    "inputs": {
+      "guidance": 2.5,
+      "conditioning": [
+        "351",
+        0
+      ]
+    },
+    "class_type": "FluxGuidance",
+    "_meta": {
+      "title": "FluxGuidance"
+    }
+  },
+  "319": {
+    "inputs": {
+      "PowerLoraLoaderHeaderWidget": {
+        "type": "PowerLoraLoaderHeaderWidget"
+      },
+      "lora_1": {
+        "on": false,
+        "lora": "flux_realism_lora.safetensors",
+        "strength": 1
+      },
+      "lora_2": {
+        "on": false,
+        "lora": "aidmaMJ6.1-FLUX-v0.5.safetensors",
+        "strength": 0.5
+      },
+      "lora_3": {
+        "on": false,
+        "lora": "JDSandy3.safetensors",
+        "strength": 1
+      },
+      "lora_4": {
+        "on": false,
+        "lora": "Flux Compass.safetensors",
+        "strength": 1
+      },
+      "➕ Add Lora": "",
+      "model": [
+        "332",
+        0
+      ],
+      "clip": [
+        "369",
+        0
+      ]
+    },
+    "class_type": "Power Lora Loader (rgthree)",
+    "_meta": {
+      "title": "Power Lora Loader (rgthree)"
+    }
+  },
+  "332": {
+    "inputs": {
+      "any_02": [
+        "393",
+        0
+      ]
+    },
+    "class_type": "Any Switch (rgthree)",
+    "_meta": {
+      "title": "Any Switch (rgthree)"
+    }
+  },
+  "333": {
+    "inputs": {
+      "any_02": [
+        "394",
+        0
+      ]
+    },
+    "class_type": "Any Switch (rgthree)",
+    "_meta": {
+      "title": "Any Switch (rgthree)"
+    }
+  },
+  "348": {
+    "inputs": {
+      "positive": "Dog"
+    },
+    "class_type": "easy positive",
+    "_meta": {
+      "title": "Positive"
+    }
+  },
+  "349": {
+    "inputs": {
+      "negative": ""
+    },
+    "class_type": "easy negative",
+    "_meta": {
+      "title": "Negative"
+    }
+  },
+  "351": {
+    "inputs": {
+      "text": [
+        "388",
+        0
+      ],
+      "clip": [
+        "319",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "352": {
+    "inputs": {
+      "text": [
+        "388",
+        1
+      ],
+      "clip": [
+        "319",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "369": {
+    "inputs": {
+      "clip_name1": "t5-v1_1-xxl-encoder-Q8_0.gguf",
+      "clip_name2": "clip_l.safetensors",
+      "type": "flux"
+    },
+    "class_type": "DualCLIPLoaderGGUF",
+    "_meta": {
+      "title": "DualCLIPLoader (GGUF)"
+    }
+  },
+  "388": {
+    "inputs": {
+      "styles": "JD Styles",
+      "select_styles": "",
+      "positive": [
+        "348",
+        0
+      ],
+      "negative": [
+        "349",
+        0
+      ]
+    },
+    "class_type": "easy stylesSelector",
+    "_meta": {
+      "title": "Styles Selector"
+    }
+  },
+  "393": {
+    "inputs": {
+      "unet_name": "flux1-dev-Q8_0.gguf"
+    },
+    "class_type": "UnetLoaderGGUF",
+    "_meta": {
+      "title": "Unet Loader (GGUF)"
+    }
+  },
+  "394": {
+    "inputs": {
+      "value": 20
+    },
+    "class_type": "PrimitiveInt",
+    "_meta": {
+      "title": "Int"
+    }
+  }
+}
