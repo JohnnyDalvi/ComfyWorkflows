@@ -70,7 +70,7 @@
   },
   "311": {
     "inputs": {
-      "filename_prefix": "ComfyUI",
+      "filename_prefix": "Hermes/flux",
       "images": [
         "8",
         0

@@ -54,7 +54,7 @@
         "98:32",
         1
       ],
-      "batch_size": 2
+      "batch_size": 1
     },
     "class_type": "EmptyFlux2LatentImage",
     "_meta": {

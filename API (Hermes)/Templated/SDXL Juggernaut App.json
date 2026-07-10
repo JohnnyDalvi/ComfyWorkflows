@@ -101,7 +101,7 @@
   },
   "140": {
     "inputs": {
-      "value": "SDXL"
+      "value": "Hermes/juggernaut"
     },
     "class_type": "PrimitiveString",
     "_meta": {
@@ -137,7 +137,7 @@
     "inputs": {
       "width": 1024,
       "height": 1024,
-      "batch_size": 4
+      "batch_size": 1
     },
     "class_type": "EmptyLatentImage",
     "_meta": {
@@ -155,15 +155,6 @@
     "class_type": "easy showAnything",
     "_meta": {
       "title": "Positive Debug"
-    }
-  },
-  "203": {
-    "inputs": {
-      "value": 1111599172135007
-    },
-    "class_type": "PrimitiveInt",
-    "_meta": {
-      "title": "Seed"
     }
   },
   "255": {
@@ -200,10 +191,7 @@
   },
   "274": {
     "inputs": {
-      "seed": [
-        "203",
-        0
-      ],
+      "seed": 1111599172135007,
       "steps": [
         "139",
         9
