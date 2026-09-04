@@ -1,7 +1,7 @@
 {
   "29": {
     "inputs": {
-      "filename_prefix": "Hermes/krea2",
+      "filename_prefix": "Krea2_turbo",
       "images": [
         "30:8",
         0
@@ -41,7 +41,7 @@
   "52": {
     "inputs": {
       "styles": "JD Styles",
-      "select_styles": "{{style}}",
+      "select_styles": "Photography Cinematic",
       "positive": [
         "53",
         0
@@ -54,7 +54,7 @@
   },
   "53": {
     "inputs": {
-      "value": "{{prompt}}"
+      "value": "A mutant giant male hybrid of a cactus and human, muscular and with bare skin with the cactus behaving like a organic armor, slowly walking through the street while everybody around is in awe. "
     },
     "class_type": "PrimitiveStringMultiline",
     "_meta": {
@@ -436,6 +436,15 @@
     "class_type": "ConditioningKrea2Rebalance",
     "_meta": {
       "title": "Conditioning Krea2 Rebalance"
+    }
+  },
+  "991801": {
+    "class_type": "PrimitiveStringMultiline",
+    "inputs": {
+      "value": ""
+    },
+    "_meta": {
+      "title": "Negative Prompt"
     }
   }
 }
